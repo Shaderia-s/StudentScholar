@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Bckend"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Nov11"
+	}
+}

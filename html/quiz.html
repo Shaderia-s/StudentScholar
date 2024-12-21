@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorm Style Quiz</title>
+    <link rel="stylesheet" href="../CSS/quiz-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Find Your Dorm Style</h1>
+    </header>
+
+    <main>
+        <section id="quiz-section">
+            <!-- Back Button -->
+            <a href="quizzes.html" class="back-button">← Back to Home</a>
+
+            <!-- Quiz with Images -->
+            <div class="question">
+                <h3>What’s your favorite dorm color scheme?</h3>
+                <label>
+                    <img src="../IMG/Earthytones.jpg" alt="Boho Chic" class="quiz-image">
+                    <input type="radio" name="color" value="Boho Chic"> Warm earth tones
+                </label><br>
+                <label>
+                    <img src="../img/neutralwhites.jpg" alt="Minimalist" class="quiz-image">
+                    <input type="radio" name="color" value="Minimalist"> Neutrals and whites
+                </label><br>
+                <label>
+                    <img src="../img/SoftPastels.jpg" alt="Vintage Vibes" class="quiz-image">
+                    <input type="radio" name="color" value="Vintage Vibes"> Pastels and soft hues
+                </label><br>
+                <label>
+                    <img src="../img/Brightroom.jpg" alt="Modern" class="quiz-image">
+                    <input type="radio" name="color" value="Modern"> Bold and striking contrasts
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>What’s your go-to dorm accessory?</h3>
+                <label>
+                    <img src="../img/Tapestry.jpg" alt="Boho Accessory" class="quiz-image">
+                    <input type="radio" name="accessory" value="Boho Chic"> Tapestries and plants
+                </label><br>
+                <label>
+                    <img src="../img/storage.jpg" alt="Minimalist Accessory" class="quiz-image">
+                    <input type="radio" name="accessory" value="Minimalist"> Sleek storage boxes
+                </label><br>
+                <label>
+                    <img src="../img/Fairylights.jpg" alt="Vintage Accessory" class="quiz-image">
+                    <input type="radio" name="accessory" value="Vintage Vibes"> Decorative fairy lights
+                </label><br>
+                <label>
+                    <img src="../img/techgadgets.jpg" alt="Modern Accessory" class="quiz-image">
+                    <input type="radio" name="accessory" value="Modern"> Stylish tech gadgets
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>How do you want your dorm to feel?</h3>
+                <label>
+                    <img src="../img/cozy.jpg" alt="Boho Feel" class="quiz-image">
+                    <input type="radio" name="feel" value="Boho Chic"> Cozy and relaxed
+                </label><br>
+                <label>
+                    <img src="../img/organized.jpg" alt="Minimalist Feel" class="quiz-image">
+                    <input type="radio" name="feel" value="Minimalist"> Clean and organized
+                </label><br>
+                <label>
+                    <img src="../img/nostaligc.jpg" alt="Vintage Feel" class="quiz-image">
+                    <input type="radio" name="feel" value="Vintage Vibes"> Warm and nostalgic
+                </label><br>
+                <label>
+                    <img src="../img/Modern.jpg" alt="Modern Feel" class="quiz-image">
+                    <input type="radio" name="feel" value="Modern"> Sleek and high-energy
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>What type of lighting do you prefer?</h3>
+                <label>
+                    <img src="../img/Wamrambient.jpg" alt="Boho Lighting" class="quiz-image">
+                    <input type="radio" name="lighting" value="Boho Chic"> Warm and ambient
+                </label><br>
+                <label>
+                    <img src="../img/Brightsimple.jpg" alt="Minimalist Lighting" class="quiz-image">
+                    <input type="radio" name="lighting" value="Minimalist"> Bright and simple
+                </label><br>
+                <label>
+                    <img src="../img/vintage.jpg" alt="Vintage Lighting" class="quiz-image">
+                    <input type="radio" name="lighting" value="Vintage Vibes"> Fairy lights or vintage lamps
+                </label><br>
+                <label>
+                    <img src="../img/hitech.jpg" alt="Modern Lighting" class="quiz-image">
+                    <input type="radio" name="lighting" value="Modern"> LED lights and high-tech gadgets
+                </label>
+            </div>
+
+            <div class="question">
+                <h3>What’s your ideal dorm furniture style?</h3>
+                <label>
+                    <img src="../img/Wooden.jpg" alt="Boho Furniture" class="quiz-image">
+                    <input type="radio" name="furniture" value="Boho Chic"> Wooden, earthy, and textured
+                </label><br>
+                <label>
+                    <img src="../img/sleek.jpg" alt="Minimalist Furniture" class="quiz-image">
+                    <input type="radio" name="furniture" value="Minimalist"> Sleek and functional
+                </label><br>
+                <label>
+                    <img src="../img/retro.jpg" alt="Vintage Furniture" class="quiz-image">
+                    <input type="radio" name="furniture" value="Vintage Vibes"> Antique or retro pieces
+                </label><br>
+                <label>
+                    <img src="../img/minimalistic.jpg" alt="Modern Furniture" class="quiz-image">
+                    <input type="radio" name="furniture" value="Modern"> Geometric and minimalist designs
+                </label>
+            </div>
+
+            <!-- Button to get result -->
+            <button id="getResultBtn">See Your Result</button>
+
+            <!-- Display Quiz Result -->
+            <div id="quizResult"></div>
+        </section>
+    </main>
+
+    <script src="../JS/quiz.js"></script>
+    <audio id="resultSound" src="success audio.mp3" preload="auto"></audio>
+
+</body>
+</html>

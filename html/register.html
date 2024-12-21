@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../CSS/register-styles.css">
+</head>
+<body>
+    <div class="registration-container">
+        <h1>Register</h1>
+        <form id="registerForm" onsubmit="registerUser(event)">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="middleName">Middle Name</label>
+            <input type="text" id="middleName" name="middleName">
+
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required>
+            <small>Password must be at least 8 characters long and contain at least 1 uppercase letter, 1 number, and 1 special character.</small>
+
+            <label for="confirmPassword">Confirm Password *</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+<!--Form info -->
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            // Retrieve the form data
+            const username = document.getElementById('firstName').value; // Update to get the username
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            try {
+                // Send a POST request to the backend
+                const response = await fetch('http://localhost:3000/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password, email })
+                });
+    
+                // Parse the response
+                const data = await response.json();
+    
+                // Handle success or error based on the backend response
+                if (response.ok) {
+                    alert(data.message); // Display success message
+                    window.location.href = 'profile.html'; // Redirect on success
+                } else {
+                    alert(data.error); // Display error message
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+    
+    <script src="register.js"></script>
+
+</body>
+</html>
+

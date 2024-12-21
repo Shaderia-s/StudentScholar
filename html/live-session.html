@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Study Session</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Student Scholar</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="live-session.html">Live Sessions</a></li>
+        </ul>
+    </nav>
+    <main class="session-container">
+        <h1>Live Study Sessions for Everyone</h1>
+        <p>Connect, collaborate, and study together with Student Scholar</p>
+        <div class="session-buttons">
+            <button onclick="openNewSession()" class="new-meeting">+ New Session</button>
+            <input type="text" placeholder="Enter a code or link">
+            <button class="join-button">Join</button>
+        </div>
+    </main>
+
+    <script>
+        function openNewSession() {
+            window.location.href = 'start-session.html';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+ <title>Student Scholar</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Student Scholar</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="live-session.html">Live Sessions</a></li>
+        </ul>
+    </nav>
+    <!--Banner under Navbar-->
+    <!-- Banner with Image and Quote -->
+    <head>
+        <!-- Place this in the <head> section of your document -->
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="image-banner">
+            <img src="../IMG/banner7.png" alt="Banner Image">
+            <div class="overlay-text">
+                <p id="quote-text">Loading quote...</p>
+            </div>
+        </div>
+    </body>
+    
+
+<!-- Script for fetching the quote -->
+<script>
+    // Function to fetch and display a random quote
+    async function fetchQuote() {
+        try {
+            console.log('Fetching quote...');
+            const response = await fetch('https://api.quotable.io/random');
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            const quote = data.content; // The quote text
+            const author = data.author; // The author
+
+            console.log('Quote fetched successfully:', quote, author);
+
+            // Update the quote text inside the overlay
+            document.getElementById('quote-text').textContent = `"${quote}" - ${author}`;
+        } catch (error) {
+            console.error('Error fetching quote:', error);
+            document.getElementById('quote-text').textContent = "An inspirational quote will appear here.";
+        }
+    }
+
+    // Fetch a quote when the page loads
+    document.addEventListener('DOMContentLoaded', fetchQuote);
+</script>
+ 
+      
+       
+    <section class="article-section">
+        <div class="article-content">
+            <div class="article-image">
+                <img src="../IMG/Article1TN.png" alt="Next Question">
+            </div>
+            <div class="article-text">
+                <p class="article-subtitle">Presented by Student Scholar</p>
+                <h2 class="article-title">Campus Conversations: Rapid-Fire Q&A </h2>
+                <p class="article-description">
+                    Quickfire questions with inspiring students and campus influencers to uncover their stories, passions, and favorite college hacks
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="interactive-calendar">
+        <h1 class="calendar-title">November Events!!</h1>
+        <button id="toggleViewButton" class="toggle-view">Switch to Monthly View</button>
+        <div class="calendar-header">
+            <div>Monday</div>
+            <div>Tuesday</div>
+            <div>Wednesday</div>
+            <div>Thursday</div>
+            <div>Friday</div>
+            <div>Saturday</div>
+            <div>Sunday</div>
+        </div>
+        <div class="calendar-grid">
+            <!-- Example of days with premade events -->
+            <div class="day">
+                <span class="date">28</span>
+                <div class="event">
+                    <img src="../IMG/calendar1.jpeg" alt="Event Image">
+                    <p>Meeting with Study Group</p>
+                </div>
+            </div>
+            <div class="day">
+                <span class="date">29</span>
+                <div class="event">
+                    <img src="../IMG/calendar2.jpeg" alt="Event Image">
+                    <p>UX Workshop </p>
+                </div>
+            </div>
+            <div class="day">
+                <span class="date">30</span>
+                <div class="event">
+                    <img src="../IMG/calendar3.jpeg" alt="Event Image">
+                    <p>Fuel for Finals Ceminar</p>
+                </div>
+            </div>
+        </div>
+        <div class="add-event-form">
+            <h2>Add Your Event</h2>
+            <input type="text" id="eventDate" placeholder="Enter Date (e.g., 15)">
+            <input type="text" id="eventName" placeholder="Event Name">
+            <input type="file" id="eventImage" accept="image/*">
+            <button id="addEventButton">Add Event</button>
+        </div>
+    </div>
+    
+    
+  
+    <!--Scrolling text-->
+    <section class="scrolling-text">
+        <div class="scrolling-text-content">
+            <p>DESCRIBE GEN Z STUDENTS IN THREE WORDS? WHAT ARE THE FIRST THREE SONGS ON YOUR SPOTIFY 'ON REPEAT' PLAYLIST? WHAT ONLINE TREND ARE YOU TOTALLY OVER? DO YOU NEED A LIVE STUDY SESSION?</p>
+        </div>
+    </section>
+
+    <section class="featured-section">
+        <h2 class="section-title">Life 🌎</h2>
+        <div class="featured-grid">
+            <!-- Left-side article -->
+            <div class="featured-item">
+                <img src="../IMG/Serendipity.jpg" alt="Feature 1">
+                <p class="category">Experiences</p>
+                <h3 class="featured-title">Chasing Happy Accidents: Discovering Serendipity in the Student Grind</h3>
+            </div>
+    
+            <!-- Center main article -->
+            <div class="featured-item main">
+                <img src="../IMG/Firstdayofschool.jpg" alt="Main Feature">
+                <p class="category">Experiences</p>
+                <h3 class="featured-title">From Nerves to New Beginnings: My First Day as a College Freshman </h3>
+            </div>
+    
+            <!-- Right-side article -->
+            <div class="featured-item">
+                <img src="../IMG/artschool.jpg" alt="Feature 2">
+                <p class="category">Experiences</p>
+                <h3 class="featured-title">Brushstrokes & Breakthroughs: My Life as an Art School Rebel</h3>
+            </div>
+
+              <!-- Right-side article -->
+              <div class="featured-item">
+                <img src="../IMG/winterbreak.jpeg" alt="Feature 2">
+                <p class="category">Experiences</p>
+                <h3 class="featured-title">Exploring the Magic of College Winter Breaks</h3>
+            </div>
+    
+            <!-- Bottom-left article -->
+            <div class="featured-item">
+                <img src="../IMG/slowdown.jpg" alt="Feature 3">
+                <p class="category">Experiences</p>
+                <h3 class="featured-title">Pause to Prosper: The Art of Slowing Down and Taking Breaks for Student Success</h3>
+            </div>
+    
+            <!-- Bottom-right article -->
+            <div class="featured-item">
+                <img src="../IMG/HBCU.jpeg" alt="Feature 4">
+                <p class="category">Experiences</p>
+                <h3 class="featured-title">Rooted in Excellence: The Transformative Power of HBCUs</h3>
+            </div>
+        </div>
+    </section>
+
+      <!-- Banner Section -->
+      <div class="banner-section">
+        <a href="live-session.html">
+            <img src="../IMG/createastudysession.png" alt="Banner Image" class="banner-image">
+        </a>
+    </div>
+    
+<!-- Quizzes Section in index.html -->
+<section id="index-quizzes">
+    <h2 class="section-title">Quizzes 🌎</h2>
+    <div class="life-grid">
+        <div class="life-item large">
+            <img src="../IMG/roommate.png" alt="Roommate Match">
+            <p class="category">Experiences</p>
+            <h3 class="life-title">Roommate Compatibility Quiz - Will You Find Your Roomie Match?</h3>
+        </div>
+        <div class="life-item">
+            <a href="quiz.html">
+            <img src="../IMG/collegemajor.jpeg" alt="Dorm Decorum">
+            <p class="category">Experiences</p>
+            <h3 class="life-title">Dorm Decor Quiz - What's Your Ideal Dorm Style?</h3>
+            </a>
+        </div>
+
+        <div class="life-item">
+            <img src="../IMG/TimeManagement.png" alt="Time Management">
+            <p class="category">Academics</p>
+            <h3 class="life-title">Time Management Challenge - How Good Are You at Balancing Studies?</h3>
+        </div>
+        <div class="life-item">
+            <img src="../IMG/campus socializer.jpeg" alt="Socializing">
+            <p class="category">Experiences</p>
+            <h3 class="life-title">Campus Socializer - What Type of College Friend Are You?</h3>
+        </div>
+        <div class="life-item">
+            <img src="../IMG/womaninstem.png" alt="Matching Major">
+            <p class="category">Life</p>
+            <h3 class="life-title">College Major Match - Discover Your Ideal Field of Study</h3>
+        </div>
+    </div>
+</section>
+
+
+    <!--Coursel Section-->
+    <section class="most-recent-section">
+        <h2 class="section-title">Most Recent <span>⏰</span></h2>
+    
+        <div class="carousel-container">
+            <div class="carousel">
+                <!-- Slide 1 -->
+                <div class="carousel-item">
+                    <img src="../IMG/ai note taking.png" alt="Article 1">
+                    <div class="carousel-content">
+                        <p class="category">Academics</p>
+                        <h3>How I Used AI To Take Effective Notes</h3>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <img src="../IMG/badgradez.jpeg" alt="Article 2">
+                    <div class="carousel-content">
+                        <p class="category">Academics</p>
+                        <h3>How to Talk to Your Professor about Your BAD grade..</h3>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+    
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <img src="../IMG/badgrade.png" alt="Article 3">
+                    <div class="carousel-content">
+                        <p class="category">Academics</p>
+                        <h3>Why Taking Mental Health Days is Crucial for College Students</h3>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+    
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                    <img src="../IMG/onlineedu.png" alt="Article 4">
+                    <div class="carousel-content">
+                        <p class="category">Academics</p>
+                        <h3>The Rise of Online Education: Pros and Cons for College Students</h3>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+    
+                <!-- Slide 5 -->
+                <div class="carousel-item">
+                    <img src="../IMG/Balance.png" alt="Article 5">
+                    <div class="carousel-content">
+                        <p class="category">Academics</p>
+                        <h3>How to Balance Academics and Extracurricular Activities Effectively</h3>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Carousel Navigation Arrows -->
+            <button class="carousel-nav prev" onclick="prevSlide()">←</button>
+            <button class="carousel-nav next" onclick="nextSlide()">→</button>
+        </div>
+    </section>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Logo and tagline -->
+            <div class="footer-logo">
+                <h3>Student Scholar</h3>
+                <p>Empowering Students, One Step at a Time.</p>
+            </div>
+    
+            <!-- Footer navigation links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quizzes.html">Quizzes</a></li>
+                    <li><a href="article.html">Articles</a></li>
+                    <li><a href="live-session.html">Live Sessions</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social media links -->
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="../IMG/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="../IMG/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="../IMG/instagram copy.png" alt="Instagram"></a>
+                    <a href="#"><img src="../IMG/tik-tok.png" alt="TikTok"></a>
+                </div>
+            </div>
+    
+            <!-- Contact information -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:info@studentscholar.com">info@studentscholar.com</a></p>
+                <p>Phone: +1 (800) 123-4567</p>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Student Scholar. All Rights Reserved.</p>
+        </div>
+    </footer>    
+    
+    <script src="../JS/carousel.js"></script>
+    <script src="../JS/calendar.js"></script>
+</body>
+</html>

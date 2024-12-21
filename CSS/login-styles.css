@@ -1,0 +1,122 @@
+/* Login Page Styling */
+body {
+    background-color: #d4b1ff; /* Light purple background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    width: 80%;
+    max-width: 900px;
+    background-color: #d4b1ff; /* Match background color */
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.login-header img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.login-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-section, .signup-section {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.divider {
+    width: 1px;
+    background-color: #000;
+    height: 100%;
+}
+
+.login-section h2, .signup-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.login-section p, .signup-section p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0 20px;
+}
+
+.login-section form label {
+    display: none; /* Hide label for aesthetic */
+}
+
+.login-section input[type="email"],
+.login-section input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.captcha {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.login-button, .signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+/* Divider Styling */
+.divider {
+    width: 1px;          /* Thin vertical line */
+    background-color: #000; /* Black color for contrast */
+    height: 80%;         /* Height of the divider */
+    align-self: center;  /* Centers the divider vertically */
+}
+

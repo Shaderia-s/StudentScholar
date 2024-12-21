@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog Editor</title>
+    <link rel="stylesheet" href="../CSS/blog-styles.css">
+</head>
+<body>
+    <div class="blog-editor">
+        <h1>Blog Editor</h1>
+        <form id="blogForm">
+            <input type="text" id="blogTitle" placeholder="Blog Title" required>
+            <textarea id="blogContent" placeholder="Write your experience here..." required></textarea>
+            <button type="submit">Post Blog</button>
+        </form>
+
+        <h2>Recent Posts</h2>
+        <div id="blogPosts"></div>
+    </div>
+
+    <script src="../JS/blog-editor.js"></script>
+</body>
+</html>

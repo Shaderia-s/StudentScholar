@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Live Session</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <div class="session-start-container">
+        <h1>Start Your Live Study Session</h1>
+        <div class="username-input">
+            <label for="username">Enter Your Name:</label>
+            <input type="text" id="username" placeholder="Your Name">
+            <button onclick="startSession()">Start Session</button>
+        </div>
+    </div>
+
+    <div class="video-chat-container" style="display: none;">
+        <div class="video-section">
+            <div class="video-feed">
+                <video id="localVideo" autoplay muted playsinline></video>
+            </div>
+            <div class="controls">
+                <button onclick="toggleMute()">Mute</button>
+                <button onclick="toggleCamera()">Turn Off Camera</button>
+                <button onclick="endSession()">End Session</button>
+            </div>
+        </div>
+
+        <div class="chat-section">
+            <div class="chat-header">
+                <h2>Chat</h2>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- Chat messages will be here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let localStream;
+        let isMuted = false;
+        let isCameraOn = true;
+
+        // Default profile picture URL
+        const profilePicUrl = "../IMG/Pp.jpeg";
+
+        async function startSession() {
+            const username = document.getElementById('username').value;
+            if (!username) {
+                alert('Please enter your name to start the session.');
+                return;
+            }
+
+            document.querySelector('.session-start-container').style.display = 'none';
+            document.querySelector('.video-chat-container').style.display = 'flex';
+
+            try {
+                localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                const videoElement = document.getElementById('localVideo');
+                videoElement.srcObject = localStream;
+            } catch (error) {
+                console.error("Error accessing media devices.", error);
+                alert("Could not access the camera. Please check your permissions.");
+            }
+        }
+
+        function sendMessage() {
+            const chatInput = document.getElementById('chatInput');
+            const message = chatInput.value.trim();
+            const username = document.getElementById('username').value || "Anonymous";
+
+            if (message) {
+                const chatMessages = document.getElementById('chatMessages');
+                const messageContainer = document.createElement('div');
+                messageContainer.className = 'chat-message';
+
+                // Using the default profile picture
+                messageContainer.innerHTML = `
+                    <img src="${profilePicUrl}" alt="Profile Picture" class="profile-pic">
+                    <strong>${username}</strong>: ${message}
+                `;
+
+                chatMessages.appendChild(messageContainer);
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        function toggleMute() {
+            if (localStream) {
+                localStream.getAudioTracks()[0].enabled = !isMuted;
+                isMuted = !isMuted;
+                alert(isMuted ? "Microphone Muted" : "Microphone Unmuted");
+            }
+        }
+
+        function toggleCamera() {
+            if (localStream) {
+                localStream.getVideoTracks()[0].enabled = !isCameraOn;
+                isCameraOn = !isCameraOn;
+                alert(isCameraOn ? "Camera On" : "Camera Off");
+            }
+        }
+
+        function endSession() {
+            if (localStream) {
+                localStream.getTracks().forEach(track => track.stop());
+            }
+            window.location.href = "index.html"; // go back to index.html
+        }
+    </script>
+</body>
+</html>
